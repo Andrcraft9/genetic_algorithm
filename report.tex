@@ -1,0 +1,144 @@
+\documentclass[12pt]{article}
+
+\textheight=24cm %высота текста
+\textwidth=16cm %длина текста
+\oddsidemargin=0pt %отступ от левого края
+\topmargin=-1.5cm %отступ от верхнего края
+\flushbottom %выравнивание высоты страниц
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+
+\usepackage{tikz}
+
+\usepackage{amsmath}
+
+\usepackage[russian]{babel}
+
+\title{Генетический алгоритм}
+\author{Чаплыгин Андрей}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Результаты}
+
+Рассматриваем задачу для размера популяции 200 и общего количества эволюционных итераций 10000.
+
+Время работы без параллелизма:
+\begin{center}
+    \begin{tabular}{c}
+      \hline
+      Время работы  \\
+      \hline
+      1.046259 \\
+       \hline
+    \end{tabular}
+\end{center}
+
+Время работы с OpenMP:
+\begin{center}
+    \begin{tabular}{c|c}
+      \hline
+      Количество нитей & Время работы  \\
+      \hline
+      2 & 0.586370 \\
+      \hline
+      4 & 0.505731 \\
+       \hline
+    \end{tabular}
+\end{center}
+
+Время работы с PThreads:
+\begin{center}
+    \begin{tabular}{c|c}
+       \hline
+      Количество нитей & Время работы  \\
+      \hline
+      2 & 0.579764  \\
+      \hline
+      4 & 0.517817 \\
+       \hline
+    \end{tabular}
+\end{center}
+
+Время работы с MPI:
+\begin{center}
+    \begin{tabular}{c|c}
+       \hline
+      Количество процессов & Время работы  \\
+      \hline
+      2 & 0.560098 \\
+      \hline
+      4 & 0.509116 \\
+       \hline
+      8 & 0.488134 \\
+      \hline
+    \end{tabular}
+\end{center}
+
+\bigskip
+\bigskip
+\bigskip
+
+Время работы на кластере Tesla1 без параллелизма:
+\begin{center}
+    \begin{tabular}{c}
+      \hline
+      Время работы  \\
+      \hline
+      1.001661 \\
+      \hline
+    \end{tabular}
+\end{center}
+
+Время работы на кластере Tesla1 с OpenMP:
+\begin{center}
+    \begin{tabular}{c|c}
+     \hline
+      Количество нитей & Время работы  \\
+      \hline
+      2 & 0.542787 \\
+      \hline
+      4 & 0.286658 \\
+      \hline
+      8 &  0.288872 \\
+      \hline
+    \end{tabular}
+\end{center}
+
+\newpage
+
+Время работы на кластере Tesla1 с PThreads:
+\begin{center}
+    \begin{tabular}{c|c}
+     \hline
+      Количество нитей & Время работы  \\
+      \hline
+      2 & 0.545460 \\
+      \hline
+      4 & 0.275472 \\
+      \hline
+      8 &  0.268269 \\
+      \hline
+    \end{tabular}
+\end{center}
+
+Время работы на кластере Tesla1 с MPI:
+\begin{center}
+    \begin{tabular}{c|c}
+     \hline
+      Количество процессов & Время работы  \\
+      \hline
+      4 & 0.354718 \\
+      \hline
+      8 & 0.226390 \\
+      \hline
+      16 &  0.252208 \\
+      \hline
+    \end{tabular}
+\end{center}
+
+\end{document}
